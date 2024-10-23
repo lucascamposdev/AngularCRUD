@@ -1,0 +1,18 @@
+
+  <div class="area-login-background d-none d-md-block block w-[55%] h-screen overflow-hidden float-start bg-primary-light">
+    <img src="../../../assets/bg.png" alt="background" class="">
+  </div>
+
+  <div class="flex flex-col items-center justify-center h-screen gap-5">
+    <form class="text-center w-64">
+      <p class="text-primary-light font-extrabold text-4xl tracking-widest">CRUD</p>
+      <p class=" text-neutral mb-5">Lorem ipsum dolor sit amet.</p>
+
+      <div class="flex flex-col gap-2">
+        <input [(ngModel)]="userName" [ngModelOptions]="{standalone: true}" type="text" name="" placeholder="Your name" class="p-2 border border-neutral rounded">
+        <app-button (click)="login()" textButton="Login"/>
+      </div>
+    </form>
+
+    <p>© 2024, Developed by /Lucas Campos.</p>
+  </div>
