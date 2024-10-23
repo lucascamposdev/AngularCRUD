@@ -1,0 +1,11 @@
+<nav class="shadow h-screen bg-primary-light w-[210px] block float-start text-secondary-light">
+  <ul class="flex flex-col">
+    <li class="py-4"><img class="mx-auto w-[75px]" src="../../../assets/logo.png" alt="logo"></li>
+    <app-menu-item><mat-icon>home</mat-icon>Home</app-menu-item>
+    <app-menu-item><mat-icon>person_add</mat-icon>Register</app-menu-item>
+    <app-menu-item><mat-icon><span class="material-symbols-outlined">
+      share
+      </span></mat-icon>About Me</app-menu-item>
+    <app-menu-item (click)="logout()" class="absolute bottom-5 w-[210px]"><mat-icon>logout</mat-icon>Logout</app-menu-item>
+  </ul>
+</nav>

@@ -13,6 +13,6 @@ export class LoginComponent {
 
   login(){
     sessionStorage.setItem('user', this.userName);
-
+    this.route.navigate(['/']);
   }
 }
