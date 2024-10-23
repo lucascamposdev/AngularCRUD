@@ -12,7 +12,9 @@ export class LoginComponent {
   constructor(private route: Router){}
 
   login(){
+    if(this.userName.length < 3) return;
+    
     sessionStorage.setItem('user', this.userName);
-
+    this.route.navigate(['/']);
   }
 }

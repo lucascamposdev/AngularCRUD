@@ -11,6 +11,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { MenuComponent } from './_components/menu/menu.component';
 import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
 import { HomeLayoutComponent } from './layouts/home-layout/home-layout.component';
+import { MatIconModule } from '@angular/material/icon';
+import { MenuItemComponent } from './_components/menu/menu-item/menu-item.component'
 
 @NgModule({
   declarations: [
@@ -20,13 +22,15 @@ import { HomeLayoutComponent } from './layouts/home-layout/home-layout.component
     HomeComponent,
     MenuComponent,
     AuthLayoutComponent,
-    HomeLayoutComponent
+    HomeLayoutComponent,
+    MenuItemComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

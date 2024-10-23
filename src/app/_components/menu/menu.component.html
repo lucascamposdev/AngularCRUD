@@ -1,0 +1,24 @@
+<nav class="fixed left-0 top-0 z-10 w-[calc(3.50rem)] hover:w-52 shadow-black h-screen bg-primary-light text-secondary-light transition-all duration-200 overflow-hidden">
+
+  <ul class="flex flex-col">
+    <li class="p-4 mx-auto w-[57px]"><img class="mx-auto" src="../../../assets/logo.png" alt="logo" class="w-full"></li>
+    <app-menu-item link="/"><mat-icon>home</mat-icon>Home</app-menu-item>
+    <app-menu-item link="/"><mat-icon>person_add</mat-icon>Register</app-menu-item>
+    <a href="https://www.linkedin.com/in/lucascamposdev/" target="_blank" class=" min-w-max relative flex items-center gap-x-4 px-4 py-3 text-white hover:text-primary-light hover:bg-secondary-light transition-all duration-300"><mat-icon>share</mat-icon>About Me
+    </a>
+    <app-menu-item (click)="logout()" class="absolute bottom-0 w-full" link="/"><mat-icon>logout</mat-icon>Logout</app-menu-item>
+  </ul>
+
+</nav>
+
+
+<!--
+  <li class="py-4"><img class="mx-auto" src="../../../assets/logo.png" alt="logo"></li>
+  <app-menu-item><mat-icon>home</mat-icon>Home</app-menu-item>
+  <app-menu-item><mat-icon>person_add</mat-icon>Register</app-menu-item>
+  <a href="https://www.linkedin.com/in/lucascamposdev/" target="_blank" class="flex items-center gap-3 cursor-pointer p-3 hover:bg-white hover:text-primary-light transition-all duration-300">
+    <mat-icon><span class="material-symbols-outlined">share</span></mat-icon>About Me
+  </a>
+
+
+-->
