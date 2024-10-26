@@ -11,8 +11,14 @@ import { HomeComponent } from './pages/home/home.component';
 import { MenuComponent } from './_components/menu/menu.component';
 import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
 import { HomeLayoutComponent } from './layouts/home-layout/home-layout.component';
-import { MatIconModule } from '@angular/material/icon';
 import { MenuItemComponent } from './_components/menu/menu-item/menu-item.component'
+
+// Angular Material
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { MatIconModule } from '@angular/material/icon';
+import { CardComponent } from './_components/card/card.component';
+import { CardDataSpinnerComponent } from './_components/card-data-spinner/card-data-spinner.component';
+import { ProfileSidebarComponent } from './pages/home/profile-sidebar/profile-sidebar.component';
 
 @NgModule({
   declarations: [
@@ -23,14 +29,18 @@ import { MenuItemComponent } from './_components/menu/menu-item/menu-item.compon
     MenuComponent,
     AuthLayoutComponent,
     HomeLayoutComponent,
-    MenuItemComponent
+    MenuItemComponent,
+    CardComponent,
+    CardDataSpinnerComponent,
+    ProfileSidebarComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,
-    MatIconModule
+    MatIconModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,1 +1,39 @@
-<p>home works!</p>
+<section class="flex flex-col xl:flex-row p-3 gap-3 h-screen">
+  <div class="flex flex-col gap-3">
+    <!-- Header -->
+    <app-card class="w-full">
+      <div class="flex xl:flex-row flex-col ">
+        <div class="gap-3 flex flex-col justify-center flex-1 border-red-500">
+          <p class="text-primary-light text-3xl">Crud User Benefits</p>
+          <p class="leading-relaxed text-neutral">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, corrupti! Perspiciatis, quos nisi, assumenda numquam atque consequuntur debitis iste, cumque voluptas iusto repellat eum tempora neque. Provident dolor quo atque soluta.</p>
+          <app-button textButton="Start" class="xl:w-[265px]"/>
+        </div>
+
+        <div class="items-center xl:justify-end justify-center flex flex-1 xl:px-8 p-3">
+          <img src="../../../assets/dashboard.png" alt="dashboard" class="max-w-[200px] w-full">
+        </div>
+      </div>
+    </app-card>
+
+    <!-- Data Spinners -->
+    <div class="flex gap-3 xl:flex-row flex-col">
+      <app-card-data-spinner tittle="Total Users" class="flex-grow"/>
+      <app-card-data-spinner tittle="Total Benefits" class="flex-grow"/>
+    </div>
+
+    <!-- Last Registered User -->
+    <app-card>
+      <div class="flex flex-col w-full overflow-x-auto text-center">
+        <p class="text-xl text-primary-light">Last Registered User</p>
+        <hr>
+        <div class="flex text-neutral py-3 gap-x-10 justify-center">
+          <div class="text-primary-light"><mat-icon>account_circle</mat-icon></div>
+          <div><p>1</p></div>
+          <div><p>Lucas Campos</p></div>
+          <div><p>Full-Stack Developer</p></div>
+        </div>
+      </div>
+    </app-card>
+  </div>
+  <app-profile-sidebar/>
+</section>

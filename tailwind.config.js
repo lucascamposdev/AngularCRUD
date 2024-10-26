@@ -12,7 +12,7 @@ module.exports = {
           dark: '#2b6cb0'
         },
         secondary: {
-          light: '#fff',
+          light: '#fafafa',
           dark: '#c53030'
         },
         // accent: '',

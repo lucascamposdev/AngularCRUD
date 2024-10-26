@@ -1,0 +1,25 @@
+<app-card class="flex h-auto xl:h-full min-w-[250px]">
+  <aside class="flex flex-col p-4 justify-center items-center w-full">
+    <!-- Profile -->
+    <div class=" flex flex-col items-center justify-center flex-1">
+      <div class="text-center">
+        <img src="../../../../assets/bg.png" alt="profile-picture" class="rounded-full w-[75px] mb-4 mx-auto">
+        <p class="font-bold">Welcome!</p>
+        <p>{{ userName | titlecase }}</p>
+
+      </div>
+    </div>
+
+    <!-- Links -->
+    <ul class="text-neutral flex flex-col flex-1  mt-5 gap-5 w-full items-center">
+      <li class="flex items-center gap-3 hover:text-primary-light hover:font-bold cursor-pointer"><mat-icon>person</mat-icon>Manage Users</li>
+      <hr>
+      <li class="flex items-center gap-3 hover:text-primary-light hover:font-bold cursor-pointer"><mat-icon>loyalty</mat-icon>Add Benefits</li>
+      <hr>
+      <li class="flex items-center gap-3 hover:text-primary-light hover:font-bold cursor-pointer"><mat-icon>format_list_bulleted</mat-icon>Consult Users</li>
+      <hr>
+      <li class="flex items-center gap-3 hover:text-primary-light hover:font-bold cursor-pointer"><mat-icon>delete</mat-icon>Delete Users</li>
+    </ul>
+
+  </aside>
+</app-card>
