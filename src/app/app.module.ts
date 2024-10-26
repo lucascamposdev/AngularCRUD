@@ -12,6 +12,7 @@ import { MenuComponent } from './_components/menu/menu.component';
 import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
 import { HomeLayoutComponent } from './layouts/home-layout/home-layout.component';
 import { MenuItemComponent } from './_components/menu/menu-item/menu-item.component'
+import { AngularFireModule } from '@angular/fire/compat'
 
 // Angular Material
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
@@ -19,6 +20,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { CardComponent } from './_components/card/card.component';
 import { CardDataSpinnerComponent } from './_components/card-data-spinner/card-data-spinner.component';
 import { ProfileSidebarComponent } from './pages/home/profile-sidebar/profile-sidebar.component';
+import { environment } from '../environments/environment.development';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,8 @@ import { ProfileSidebarComponent } from './pages/home/profile-sidebar/profile-si
     AppRoutingModule,
     FormsModule,
     MatIconModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
   providers: [],
   bootstrap: [AppComponent]
