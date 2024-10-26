@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { User } from '../interfaces/user';
 
 @Injectable({
   providedIn: 'root'
@@ -13,11 +14,11 @@ export class UserService {
     return this.dataBase.collection('users', user => user.orderBy('name')).valueChanges({ idField: 'id'});
   }
 
-  addUser(user: any){
+  addUser(user: User){
     return this.dataBase.collection('users').add(user);
   }
 
-  updateUser(userId: string, user: any){
+  updateUser(userId: string, user: User){
     return this.dataBase.collection('users').doc(userId).update(user);
   }
 
