@@ -1,0 +1,41 @@
+<div class="p-8 flex flex-col w-screen max-w-[500px]">
+  <h1 class="text-primary-light">User Details</h1>
+  <p class="text-neutral">Have a more detailed vision about the user</p>
+
+  <div class="flex justify-between">
+    <div class="flex flex-col">
+      <div>
+        <h4 class="text-primary-light">Name</h4>
+        <p>{{ user.name }}</p>
+      </div>
+
+      <div>
+        <h4 class="text-primary-light">Email</h4>
+        <p>{{ user.email }}</p>
+      </div>
+
+      <div>
+        <h4 class="text-primary-light">Sector</h4>
+        <p>{{ user.sector }}</p>
+      </div>
+    </div>
+    <div class="flex flex-col">
+      <div>
+        <h4 class="text-primary-light">Role</h4>
+        <p>{{ user.role }}</p>
+      </div>
+
+      <div>
+        <h4 class="text-primary-light">Health Plan</h4>
+        <p *ngIf="user.healthPlan"><mat-icon>check</mat-icon></p>
+        <p *ngIf="!user.healthPlan"><mat-icon>remove</mat-icon></p>
+      </div>
+
+      <div>
+        <h4 class="text-primary-light">Dental Plan</h4>
+        <p *ngIf="user.dentalPlan"><mat-icon>check</mat-icon></p>
+        <p *ngIf="!user.dentalPlan"><mat-icon>remove</mat-icon></p>
+      </div>
+    </div>
+  </div>
+</div>
