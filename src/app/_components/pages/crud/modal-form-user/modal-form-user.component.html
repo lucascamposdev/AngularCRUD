@@ -1,0 +1,58 @@
+<div class="p-8 flex flex-col w-screen max-w-[500px]">
+  <h1 class="text-primary-light">User Form</h1>
+  <p class="text-neutral">Please fill the form to save an user</p>
+
+  <form [formGroup]="formUser" class="flex gap-5">
+    <div class="flex flex-col gap-2">
+      <mat-form-field class="example-full-width">
+        <mat-label>Name</mat-label>
+        <input type="text" matInput formControlName="name" placeholder="Your name">
+        <mat-error *ngIf="formUser.get('name')?.invalid && formUser.get('name')?.touched">
+          Please enter a valid name
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Email</mat-label>
+        <input type="email" matInput formControlName="email" placeholder="Your email">
+        <mat-error *ngIf="formUser.get('email')?.invalid && formUser.get('email')?.touched">
+          Please enter a valid email
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Sector</mat-label>
+        <input type="text" matInput formControlName="sector" placeholder="Your sector">
+        <mat-error *ngIf="formUser.get('sector')?.invalid && formUser.get('sector')?.touched">
+          Please enter a valid sector
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="flex flex-col gap-2">
+      <mat-form-field class="example-full-width">
+        <mat-label>Role</mat-label>
+        <input type="text" matInput formControlName="role" placeholder="Your role">
+        <mat-error *ngIf="formUser.get('role')?.invalid && formUser.get('role')?.touched">
+          Please enter a valid role
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Health Plans</mat-label>
+        <mat-select formControlName="healthPlan" name="healthPlan">
+          <mat-option *ngFor="let plan of plans" [value]="plan.name">{{plan.name}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Dental Plans</mat-label>
+        <mat-select formControlName="dentalPlan" name="dentalPlan">
+          <mat-option *ngFor="let plan of plans" [value]="plan.name">{{plan.name}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <app-button textButton="Save" [disabled]="!formUser.valid" (click)="saveUser()"/>
+    </div>
+
+  </form>
+</div>

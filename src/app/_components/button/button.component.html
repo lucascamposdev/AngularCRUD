@@ -1,4 +1,8 @@
 <button
-class="border-2 bg-primary-light rounded hover:bg-secondary-light hover:border-primary-light hover:text-primary-light transition-all duration-300 py-2 px-3 text-secondary-light w-full">
+[disabled]="disabled"
+[ngClass]="{
+  'border-2 bg-primary-light rounded transition-all duration-300 py-2 px-3 text-secondary-light w-full': true,
+  'opacity-50 cursor-not-allowed': disabled
+}">
 {{ textButton }}
 </button>

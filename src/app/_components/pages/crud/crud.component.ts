@@ -6,6 +6,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { User } from '../../../models/user';
 import { MatDialog } from '@angular/material/dialog';
 import { ModalViewUserComponent } from './modal-view-user/modal-view-user.component';
+import { ModalFormUserComponent } from './modal-form-user/modal-form-user.component';
 
 @Component({
   selector: 'app-crud',
@@ -61,6 +62,11 @@ export class CrudComponent {
   openModalViewUser(user: User){
     this.matDialog.open(ModalViewUserComponent, {
       data: user
+    });
+  }
+
+  openModalFormUser(){
+    this.matDialog.open(ModalFormUserComponent, {
     });
   }
 }

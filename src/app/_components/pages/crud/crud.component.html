@@ -10,7 +10,7 @@
       <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
     </mat-form-field>
 
-    <app-button textButton="+ Register"/>
+    <app-button (click)="openModalFormUser()" textButton="+ Register"/>
   </div>
 
   <div class="mat-elevation-z8 overflow-x-auto">

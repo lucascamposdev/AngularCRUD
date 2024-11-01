@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ButtonComponent } from './_components/button/button.component';
 import { LoginComponent } from './_components/pages/login/login.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './_components/pages/home/home.component';
 import { MenuComponent } from './_components/menu/menu.component';
 import { AuthLayoutComponent } from './_components/layouts/auth-layout/auth-layout.component';
@@ -29,6 +29,8 @@ import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
 import {MatSort, MatSortModule} from '@angular/material/sort';
 import { MatTableModule} from '@angular/material/table';
 import { MatDialogModule } from '@angular/material/dialog';
+import { ModalFormUserComponent } from './_components/pages/crud/modal-form-user/modal-form-user.component';
+import {MatSelectModule} from '@angular/material/select'
 
 @NgModule({
   declarations: [
@@ -45,12 +47,14 @@ import { MatDialogModule } from '@angular/material/dialog';
     ProfileSidebarComponent,
     CrudComponent,
     ModalViewUserComponent,
+    ModalFormUserComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     MatIconModule,
     MatProgressSpinnerModule,
     MatInputModule,
@@ -61,6 +65,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatSortModule,
     MatTableModule,
     MatDialogModule,
+    MatSelectModule,
     AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
   providers: [],
