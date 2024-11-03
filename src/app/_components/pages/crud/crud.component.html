@@ -50,7 +50,7 @@
           <div class="flex gap-2">
             <mat-icon (click)="openModalViewUser(row)">visibility</mat-icon>
             <mat-icon (click)="openModalEditUser(row)">edit</mat-icon>
-            <mat-icon>delete</mat-icon>
+            <mat-icon (click)="deleteUser(row.id)">delete</mat-icon>
           </div>
           </td>
       </ng-container>

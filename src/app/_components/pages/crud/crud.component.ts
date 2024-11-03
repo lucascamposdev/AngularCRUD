@@ -75,4 +75,12 @@ export class CrudComponent {
       data: user
     });
   }
+
+  deleteUser(id: string){
+    this.userService.deleteUser(id).then(
+      (res => {
+        window.alert("User deleted successfully!")
+      })
+    )
+  }
 }
