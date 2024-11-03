@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from '../../../../services/user.service';
 import { User } from '../../../../models/user';
-import { MatDialogRef } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-modal-form-user',
@@ -27,7 +27,8 @@ export class ModalFormUserComponent {
   constructor(
     private formBuilder: FormBuilder,
     private userService: UserService,
-    private dialogRef: MatDialogRef<ModalFormUserComponent>
+    private dialogRef: MatDialogRef<ModalFormUserComponent>,
+    @Inject (MAT_DIALOG_DATA) public data: User
   ){}
 
   ngOnInit(): void {
@@ -37,13 +38,24 @@ export class ModalFormUserComponent {
   saveUser(){
     const objUserForm: User = this.formUser.getRawValue();
 
-    this.userService.addUser(objUserForm).then(
-      (res: any) =>{
-        this.closeModal();
-      }
-    ).catch(err => {
-      console.error(err)
-    })
+
+    if(this.data && this.data.id){
+      this.userService.updateUser(this.data.id, objUserForm).then(
+        (res: any) =>{
+          this.closeModal();
+        }
+      ).catch(err => {
+        console.error(err)
+      })
+    }else{
+      this.userService.addUser(objUserForm).then(
+        (res: any) =>{
+          this.closeModal();
+        }
+      ).catch(err => {
+        console.error(err)
+      })
+    }
   }
 
   buildForm(){
@@ -54,6 +66,21 @@ export class ModalFormUserComponent {
       role: [null, [Validators.required, Validators.minLength(3)]],
       healthPlan: [''],
       dentalPlan: [''],
+    })
+
+    if(this.data && this.data.id){
+      this.fillForm();
+    }
+  }
+
+  fillForm(){
+    this.formUser.patchValue({
+      name: this.data.name,
+      email: this.data.email,
+      sector: this.data.sector,
+      role: this.data.role,
+      healthPlan: this.data.healthPlan,
+      dentalPlan: this.data.dentalPlan,
     })
   }
 

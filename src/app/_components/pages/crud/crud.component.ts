@@ -69,4 +69,10 @@ export class CrudComponent {
     this.matDialog.open(ModalFormUserComponent, {
     });
   }
+
+  openModalEditUser(user: User){
+    this.matDialog.open(ModalFormUserComponent, {
+      data: user
+    });
+  }
 }
